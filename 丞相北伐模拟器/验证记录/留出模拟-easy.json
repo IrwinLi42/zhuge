@@ -1,0 +1,1158 @@
+{
+  "schema": "beifa-proxy-simulation-v1",
+  "policyVersion": "1.0.1",
+  "split": "holdout",
+  "seedRange": {
+    "first": 10010001,
+    "last": 10012000,
+    "count": 2000
+  },
+  "independence": "每个单元使用不同种子开局；不同难度/策略共用种子区间用于成对比较。策略随机流与游戏随机流分离。",
+  "disclaimer": "固定公开信息代理的模拟结果，不是实际玩家通关率；现实用时不能从回合直接认定。所有策略主胜后继续尝试余下地区。",
+  "policies": {
+    "casual": "有北伐推进意图的随手代理：合法内政加权随机；出征目标偏向北线但允许支线和攻吴；战术及事件选项随机；危急时可退兵。不是全部按钮等概率，也不预知结果。",
+    "novice": "固定公开资源阈值筹粮募兵，优先陈仓—长安—潼关—洛阳；比较当前敌兵粮估算强攻/截粮回合；普通选择balanced，危急选择safe。",
+    "wu-first": "采用新手资源与战术规则，先江陵—武昌—建业，再北伐。",
+    "all-map": "采用新手资源与战术规则，先西路两区，再吴三城，最后补全北线，以全图为目标。",
+    "heal-only": "与novice同一行程、补给和战术，机缘只恢复当前健康，不提升能力。",
+    "stats-first": "与novice同一行程、补给和战术，机缘先把统兵/谋略/治政提升到110，再治疗；危及存亡时允许先治疗。"
+  },
+  "cells": {
+    "easy/casual": {
+      "runs": 2000,
+      "mainVictory": {
+        "wins": 1389,
+        "n": 2000,
+        "rate": 0.6945,
+        "lower": 0.673955905505604,
+        "upper": 0.7142983631019885,
+        "confidence": 0.95,
+        "method": "Wilson"
+      },
+      "fullVictory": {
+        "wins": 150,
+        "n": 2000,
+        "rate": 0.075,
+        "lower": 0.0642536480572273,
+        "upper": 0.08737584213183769,
+        "confidence": 0.95,
+        "method": "Wilson"
+      },
+      "mainVictoryTurns": {
+        "count": 1389,
+        "mean": 33.67242620590353,
+        "min": 17,
+        "p10": 24,
+        "median": 33,
+        "p90": 44,
+        "p95": 46,
+        "max": 49
+      },
+      "fullVictoryTurns": {
+        "count": 150,
+        "mean": 46.14,
+        "min": 40,
+        "p10": 43,
+        "median": 46,
+        "p90": 49,
+        "p95": 49,
+        "max": 49
+      },
+      "finalTurns": {
+        "count": 2000,
+        "mean": 45.171,
+        "min": 14,
+        "p10": 28,
+        "median": 50,
+        "p90": 50,
+        "p95": 50,
+        "max": 50
+      },
+      "defenseTurns": {
+        "count": 2000,
+        "mean": 2,
+        "min": 0,
+        "p10": 0,
+        "median": 2,
+        "p90": 4,
+        "p95": 5,
+        "max": 9
+      },
+      "defensePreparationTurns": {
+        "count": 2000,
+        "mean": 1.2085,
+        "min": 0,
+        "p10": 0,
+        "median": 1,
+        "p90": 3,
+        "p95": 3,
+        "max": 4
+      },
+      "forcedDefenseTurns": {
+        "count": 2000,
+        "mean": 3.2085,
+        "min": 0,
+        "p10": 0,
+        "median": 3,
+        "p90": 7,
+        "p95": 8,
+        "max": 13
+      },
+      "mainVictoryForcedDefenseTurns": {
+        "count": 1389,
+        "mean": 1.7336213102951763,
+        "min": 0,
+        "p10": 0,
+        "median": 2,
+        "p90": 4,
+        "p95": 6,
+        "max": 11
+      },
+      "defenseBattles": {
+        "count": 2000,
+        "mean": 1.1845,
+        "min": 0,
+        "p10": 0,
+        "median": 1,
+        "p90": 2,
+        "p95": 3,
+        "max": 4
+      },
+      "domesticTurns": {
+        "count": 2000,
+        "mean": 14.216,
+        "min": 0,
+        "p10": 4,
+        "median": 16,
+        "p90": 21,
+        "p95": 22,
+        "max": 28
+      },
+      "battleTurns": {
+        "count": 2000,
+        "mean": 23.1755,
+        "min": 10,
+        "p10": 17,
+        "median": 24,
+        "p90": 28,
+        "p95": 28,
+        "max": 31
+      },
+      "reasonCounts": {
+        "troops": 413,
+        "lifespan": 1226,
+        "full": 150,
+        "health": 190,
+        "grain": 21
+      },
+      "mainFailureReasons": {
+        "troops": 340,
+        "lifespan": 181,
+        "health": 69,
+        "grain": 21
+      },
+      "postVictoryEndReasons": {
+        "lifespan": 1045,
+        "full": 150,
+        "health": 121,
+        "troops": 73
+      },
+      "errors": [],
+      "chanceSpent": {
+        "health": {
+          "count": 2000,
+          "mean": 1.7915,
+          "min": 0,
+          "p10": 1,
+          "median": 2,
+          "p90": 3,
+          "p95": 3,
+          "max": 5
+        },
+        "command": {
+          "count": 2000,
+          "mean": 2.5975,
+          "min": 0,
+          "p10": 1,
+          "median": 3,
+          "p90": 4,
+          "p95": 4,
+          "max": 4
+        },
+        "strategy": {
+          "count": 2000,
+          "mean": 2.203,
+          "min": 0,
+          "p10": 1,
+          "median": 3,
+          "p90": 3,
+          "p95": 3,
+          "max": 3
+        },
+        "governance": {
+          "count": 2000,
+          "mean": 2.1995,
+          "min": 0,
+          "p10": 1,
+          "median": 3,
+          "p90": 3,
+          "p95": 3,
+          "max": 3
+        }
+      },
+      "captureCounts": {
+        "chencang": 1989,
+        "changan": 1970,
+        "tongguan": 1801,
+        "jiangling": 1775,
+        "wuchang": 1155,
+        "wudu": 1650,
+        "luoyang": 1389,
+        "longyou": 1426,
+        "jianye": 429
+      },
+      "examples": {
+        "mainWin": 10010002,
+        "fullWin": 10010006,
+        "loss": 10010001
+      }
+    },
+    "easy/novice": {
+      "runs": 2000,
+      "mainVictory": {
+        "wins": 2000,
+        "n": 2000,
+        "rate": 1,
+        "lower": 0.9980829527187469,
+        "upper": 0.9999999999999998,
+        "confidence": 0.95,
+        "method": "Wilson"
+      },
+      "fullVictory": {
+        "wins": 2000,
+        "n": 2000,
+        "rate": 1,
+        "lower": 0.9980829527187469,
+        "upper": 0.9999999999999998,
+        "confidence": 0.95,
+        "method": "Wilson"
+      },
+      "mainVictoryTurns": {
+        "count": 2000,
+        "mean": 17.858,
+        "min": 17,
+        "p10": 17,
+        "median": 18,
+        "p90": 18,
+        "p95": 19,
+        "max": 21
+      },
+      "fullVictoryTurns": {
+        "count": 2000,
+        "mean": 36.889,
+        "min": 34,
+        "p10": 36,
+        "median": 37,
+        "p90": 39,
+        "p95": 39,
+        "max": 42
+      },
+      "finalTurns": {
+        "count": 2000,
+        "mean": 36.889,
+        "min": 34,
+        "p10": 36,
+        "median": 37,
+        "p90": 39,
+        "p95": 39,
+        "max": 42
+      },
+      "defenseTurns": {
+        "count": 2000,
+        "mean": 0.4065,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 2,
+        "p95": 2,
+        "max": 4
+      },
+      "defensePreparationTurns": {
+        "count": 2000,
+        "mean": 0.2915,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 1,
+        "p95": 1,
+        "max": 2
+      },
+      "forcedDefenseTurns": {
+        "count": 2000,
+        "mean": 0.698,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 3,
+        "p95": 3,
+        "max": 6
+      },
+      "mainVictoryForcedDefenseTurns": {
+        "count": 2000,
+        "mean": 0.0185,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 0,
+        "p95": 0,
+        "max": 3
+      },
+      "defenseBattles": {
+        "count": 2000,
+        "mean": 0.2915,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 1,
+        "p95": 1,
+        "max": 2
+      },
+      "domesticTurns": {
+        "count": 2000,
+        "mean": 5.384,
+        "min": 4,
+        "p10": 5,
+        "median": 5,
+        "p90": 6,
+        "p95": 6,
+        "max": 8
+      },
+      "battleTurns": {
+        "count": 2000,
+        "mean": 22.505,
+        "min": 21,
+        "p10": 22,
+        "median": 23,
+        "p90": 23,
+        "p95": 24,
+        "max": 25
+      },
+      "reasonCounts": {
+        "full": 2000
+      },
+      "mainFailureReasons": {},
+      "postVictoryEndReasons": {
+        "full": 2000
+      },
+      "errors": [],
+      "chanceSpent": {
+        "health": {
+          "count": 2000,
+          "mean": 0.845,
+          "min": 0,
+          "p10": 0,
+          "median": 1,
+          "p90": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "command": {
+          "count": 2000,
+          "mean": 4,
+          "min": 4,
+          "p10": 4,
+          "median": 4,
+          "p90": 4,
+          "p95": 4,
+          "max": 4
+        },
+        "strategy": {
+          "count": 2000,
+          "mean": 3,
+          "min": 3,
+          "p10": 3,
+          "median": 3,
+          "p90": 3,
+          "p95": 3,
+          "max": 3
+        },
+        "governance": {
+          "count": 2000,
+          "mean": 0,
+          "min": 0,
+          "p10": 0,
+          "median": 0,
+          "p90": 0,
+          "p95": 0,
+          "max": 0
+        }
+      },
+      "captureCounts": {
+        "chencang": 2000,
+        "changan": 2000,
+        "tongguan": 2000,
+        "luoyang": 2000,
+        "wudu": 2000,
+        "longyou": 2000,
+        "jiangling": 2000,
+        "wuchang": 2000,
+        "jianye": 2000
+      },
+      "examples": {
+        "mainWin": 10010001,
+        "fullWin": 10010001
+      }
+    },
+    "easy/wu-first": {
+      "runs": 2000,
+      "mainVictory": {
+        "wins": 2000,
+        "n": 2000,
+        "rate": 1,
+        "lower": 0.9980829527187469,
+        "upper": 0.9999999999999998,
+        "confidence": 0.95,
+        "method": "Wilson"
+      },
+      "fullVictory": {
+        "wins": 2000,
+        "n": 2000,
+        "rate": 1,
+        "lower": 0.9980829527187469,
+        "upper": 0.9999999999999998,
+        "confidence": 0.95,
+        "method": "Wilson"
+      },
+      "mainVictoryTurns": {
+        "count": 2000,
+        "mean": 29.802,
+        "min": 26,
+        "p10": 28,
+        "median": 29,
+        "p90": 32,
+        "p95": 33,
+        "max": 34
+      },
+      "fullVictoryTurns": {
+        "count": 2000,
+        "mean": 36.255,
+        "min": 33,
+        "p10": 34,
+        "median": 36,
+        "p90": 38,
+        "p95": 39,
+        "max": 41
+      },
+      "finalTurns": {
+        "count": 2000,
+        "mean": 36.255,
+        "min": 33,
+        "p10": 34,
+        "median": 36,
+        "p90": 38,
+        "p95": 39,
+        "max": 41
+      },
+      "defenseTurns": {
+        "count": 2000,
+        "mean": 0.392,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 1,
+        "p95": 2,
+        "max": 3
+      },
+      "defensePreparationTurns": {
+        "count": 2000,
+        "mean": 0.297,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 1,
+        "p95": 1,
+        "max": 2
+      },
+      "forcedDefenseTurns": {
+        "count": 2000,
+        "mean": 0.689,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 2,
+        "p95": 3,
+        "max": 5
+      },
+      "mainVictoryForcedDefenseTurns": {
+        "count": 2000,
+        "mean": 0.597,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 2,
+        "p95": 3,
+        "max": 3
+      },
+      "defenseBattles": {
+        "count": 2000,
+        "mean": 0.297,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 1,
+        "p95": 1,
+        "max": 2
+      },
+      "domesticTurns": {
+        "count": 2000,
+        "mean": 5.0455,
+        "min": 4,
+        "p10": 4,
+        "median": 5,
+        "p90": 6,
+        "p95": 6,
+        "max": 8
+      },
+      "battleTurns": {
+        "count": 2000,
+        "mean": 22.2095,
+        "min": 20,
+        "p10": 21,
+        "median": 22,
+        "p90": 23,
+        "p95": 24,
+        "max": 24
+      },
+      "reasonCounts": {
+        "full": 2000
+      },
+      "mainFailureReasons": {},
+      "postVictoryEndReasons": {
+        "full": 2000
+      },
+      "errors": [],
+      "chanceSpent": {
+        "health": {
+          "count": 2000,
+          "mean": 1.8085,
+          "min": 1,
+          "p10": 1,
+          "median": 2,
+          "p90": 2,
+          "p95": 2,
+          "max": 2
+        },
+        "command": {
+          "count": 2000,
+          "mean": 4,
+          "min": 4,
+          "p10": 4,
+          "median": 4,
+          "p90": 4,
+          "p95": 4,
+          "max": 4
+        },
+        "strategy": {
+          "count": 2000,
+          "mean": 3,
+          "min": 3,
+          "p10": 3,
+          "median": 3,
+          "p90": 3,
+          "p95": 3,
+          "max": 3
+        },
+        "governance": {
+          "count": 2000,
+          "mean": 0,
+          "min": 0,
+          "p10": 0,
+          "median": 0,
+          "p90": 0,
+          "p95": 0,
+          "max": 0
+        }
+      },
+      "captureCounts": {
+        "jiangling": 2000,
+        "wuchang": 2000,
+        "jianye": 2000,
+        "chencang": 2000,
+        "changan": 2000,
+        "tongguan": 2000,
+        "luoyang": 2000,
+        "wudu": 2000,
+        "longyou": 2000
+      },
+      "examples": {
+        "mainWin": 10010001,
+        "fullWin": 10010001
+      }
+    },
+    "easy/all-map": {
+      "runs": 2000,
+      "mainVictory": {
+        "wins": 2000,
+        "n": 2000,
+        "rate": 1,
+        "lower": 0.9980829527187469,
+        "upper": 0.9999999999999998,
+        "confidence": 0.95,
+        "method": "Wilson"
+      },
+      "fullVictory": {
+        "wins": 2000,
+        "n": 2000,
+        "rate": 1,
+        "lower": 0.9980829527187469,
+        "upper": 0.9999999999999998,
+        "confidence": 0.95,
+        "method": "Wilson"
+      },
+      "mainVictoryTurns": {
+        "count": 2000,
+        "mean": 37.0945,
+        "min": 33,
+        "p10": 35,
+        "median": 37,
+        "p90": 39,
+        "p95": 40,
+        "max": 43
+      },
+      "fullVictoryTurns": {
+        "count": 2000,
+        "mean": 37.0945,
+        "min": 33,
+        "p10": 35,
+        "median": 37,
+        "p90": 39,
+        "p95": 40,
+        "max": 43
+      },
+      "finalTurns": {
+        "count": 2000,
+        "mean": 37.0945,
+        "min": 33,
+        "p10": 35,
+        "median": 37,
+        "p90": 39,
+        "p95": 40,
+        "max": 43
+      },
+      "defenseTurns": {
+        "count": 2000,
+        "mean": 0.724,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 2,
+        "p95": 2,
+        "max": 4
+      },
+      "defensePreparationTurns": {
+        "count": 2000,
+        "mean": 0.362,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 1,
+        "p95": 1,
+        "max": 2
+      },
+      "forcedDefenseTurns": {
+        "count": 2000,
+        "mean": 1.086,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 3,
+        "p95": 3,
+        "max": 6
+      },
+      "mainVictoryForcedDefenseTurns": {
+        "count": 2000,
+        "mean": 1.086,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 3,
+        "p95": 3,
+        "max": 6
+      },
+      "defenseBattles": {
+        "count": 2000,
+        "mean": 0.362,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 1,
+        "p95": 1,
+        "max": 2
+      },
+      "domesticTurns": {
+        "count": 2000,
+        "mean": 5.778,
+        "min": 4,
+        "p10": 5,
+        "median": 6,
+        "p90": 7,
+        "p95": 7,
+        "max": 9
+      },
+      "battleTurns": {
+        "count": 2000,
+        "mean": 22.3165,
+        "min": 19,
+        "p10": 21,
+        "median": 22,
+        "p90": 24,
+        "p95": 24,
+        "max": 25
+      },
+      "reasonCounts": {
+        "full": 2000
+      },
+      "mainFailureReasons": {},
+      "postVictoryEndReasons": {
+        "full": 2000
+      },
+      "errors": [],
+      "chanceSpent": {
+        "health": {
+          "count": 2000,
+          "mean": 1.811,
+          "min": 0,
+          "p10": 1,
+          "median": 2,
+          "p90": 2,
+          "p95": 2,
+          "max": 2
+        },
+        "command": {
+          "count": 2000,
+          "mean": 4,
+          "min": 4,
+          "p10": 4,
+          "median": 4,
+          "p90": 4,
+          "p95": 4,
+          "max": 4
+        },
+        "strategy": {
+          "count": 2000,
+          "mean": 3,
+          "min": 3,
+          "p10": 3,
+          "median": 3,
+          "p90": 3,
+          "p95": 3,
+          "max": 3
+        },
+        "governance": {
+          "count": 2000,
+          "mean": 0,
+          "min": 0,
+          "p10": 0,
+          "median": 0,
+          "p90": 0,
+          "p95": 0,
+          "max": 0
+        }
+      },
+      "captureCounts": {
+        "wudu": 2000,
+        "longyou": 2000,
+        "jiangling": 2000,
+        "wuchang": 2000,
+        "jianye": 2000,
+        "chencang": 2000,
+        "changan": 2000,
+        "tongguan": 2000,
+        "luoyang": 2000
+      },
+      "examples": {
+        "mainWin": 10010001,
+        "fullWin": 10010001
+      }
+    },
+    "easy/heal-only": {
+      "runs": 2000,
+      "mainVictory": {
+        "wins": 2000,
+        "n": 2000,
+        "rate": 1,
+        "lower": 0.9980829527187469,
+        "upper": 0.9999999999999998,
+        "confidence": 0.95,
+        "method": "Wilson"
+      },
+      "fullVictory": {
+        "wins": 2000,
+        "n": 2000,
+        "rate": 1,
+        "lower": 0.9980829527187469,
+        "upper": 0.9999999999999998,
+        "confidence": 0.95,
+        "method": "Wilson"
+      },
+      "mainVictoryTurns": {
+        "count": 2000,
+        "mean": 17.966,
+        "min": 17,
+        "p10": 17,
+        "median": 18,
+        "p90": 19,
+        "p95": 19,
+        "max": 21
+      },
+      "fullVictoryTurns": {
+        "count": 2000,
+        "mean": 37.308,
+        "min": 34,
+        "p10": 36,
+        "median": 37,
+        "p90": 39,
+        "p95": 40,
+        "max": 42
+      },
+      "finalTurns": {
+        "count": 2000,
+        "mean": 37.308,
+        "min": 34,
+        "p10": 36,
+        "median": 37,
+        "p90": 39,
+        "p95": 40,
+        "max": 42
+      },
+      "defenseTurns": {
+        "count": 2000,
+        "mean": 0.4535,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 2,
+        "p95": 2,
+        "max": 4
+      },
+      "defensePreparationTurns": {
+        "count": 2000,
+        "mean": 0.3055,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 1,
+        "p95": 1,
+        "max": 2
+      },
+      "forcedDefenseTurns": {
+        "count": 2000,
+        "mean": 0.759,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 3,
+        "p95": 3,
+        "max": 6
+      },
+      "mainVictoryForcedDefenseTurns": {
+        "count": 2000,
+        "mean": 0.0395,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 0,
+        "p95": 0,
+        "max": 3
+      },
+      "defenseBattles": {
+        "count": 2000,
+        "mean": 0.3055,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 1,
+        "p95": 1,
+        "max": 2
+      },
+      "domesticTurns": {
+        "count": 2000,
+        "mean": 5.5215,
+        "min": 4,
+        "p10": 5,
+        "median": 5,
+        "p90": 6,
+        "p95": 7,
+        "max": 8
+      },
+      "battleTurns": {
+        "count": 2000,
+        "mean": 22.7865,
+        "min": 21,
+        "p10": 22,
+        "median": 23,
+        "p90": 24,
+        "p95": 24,
+        "max": 25
+      },
+      "reasonCounts": {
+        "full": 2000
+      },
+      "mainFailureReasons": {},
+      "postVictoryEndReasons": {
+        "full": 2000
+      },
+      "errors": [],
+      "chanceSpent": {
+        "health": {
+          "count": 2000,
+          "mean": 2,
+          "min": 2,
+          "p10": 2,
+          "median": 2,
+          "p90": 2,
+          "p95": 2,
+          "max": 2
+        },
+        "command": {
+          "count": 2000,
+          "mean": 0,
+          "min": 0,
+          "p10": 0,
+          "median": 0,
+          "p90": 0,
+          "p95": 0,
+          "max": 0
+        },
+        "strategy": {
+          "count": 2000,
+          "mean": 0,
+          "min": 0,
+          "p10": 0,
+          "median": 0,
+          "p90": 0,
+          "p95": 0,
+          "max": 0
+        },
+        "governance": {
+          "count": 2000,
+          "mean": 0,
+          "min": 0,
+          "p10": 0,
+          "median": 0,
+          "p90": 0,
+          "p95": 0,
+          "max": 0
+        }
+      },
+      "captureCounts": {
+        "chencang": 2000,
+        "changan": 2000,
+        "tongguan": 2000,
+        "luoyang": 2000,
+        "wudu": 2000,
+        "longyou": 2000,
+        "jiangling": 2000,
+        "wuchang": 2000,
+        "jianye": 2000
+      },
+      "examples": {
+        "mainWin": 10010001,
+        "fullWin": 10010001
+      }
+    },
+    "easy/stats-first": {
+      "runs": 2000,
+      "mainVictory": {
+        "wins": 2000,
+        "n": 2000,
+        "rate": 1,
+        "lower": 0.9980829527187469,
+        "upper": 0.9999999999999998,
+        "confidence": 0.95,
+        "method": "Wilson"
+      },
+      "fullVictory": {
+        "wins": 2000,
+        "n": 2000,
+        "rate": 1,
+        "lower": 0.9980829527187469,
+        "upper": 0.9999999999999998,
+        "confidence": 0.95,
+        "method": "Wilson"
+      },
+      "mainVictoryTurns": {
+        "count": 2000,
+        "mean": 17.858,
+        "min": 17,
+        "p10": 17,
+        "median": 18,
+        "p90": 18,
+        "p95": 19,
+        "max": 21
+      },
+      "fullVictoryTurns": {
+        "count": 2000,
+        "mean": 36.889,
+        "min": 34,
+        "p10": 36,
+        "median": 37,
+        "p90": 39,
+        "p95": 39,
+        "max": 42
+      },
+      "finalTurns": {
+        "count": 2000,
+        "mean": 36.889,
+        "min": 34,
+        "p10": 36,
+        "median": 37,
+        "p90": 39,
+        "p95": 39,
+        "max": 42
+      },
+      "defenseTurns": {
+        "count": 2000,
+        "mean": 0.4065,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 2,
+        "p95": 2,
+        "max": 4
+      },
+      "defensePreparationTurns": {
+        "count": 2000,
+        "mean": 0.2915,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 1,
+        "p95": 1,
+        "max": 2
+      },
+      "forcedDefenseTurns": {
+        "count": 2000,
+        "mean": 0.698,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 3,
+        "p95": 3,
+        "max": 6
+      },
+      "mainVictoryForcedDefenseTurns": {
+        "count": 2000,
+        "mean": 0.0185,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 0,
+        "p95": 0,
+        "max": 3
+      },
+      "defenseBattles": {
+        "count": 2000,
+        "mean": 0.2915,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 1,
+        "p95": 1,
+        "max": 2
+      },
+      "domesticTurns": {
+        "count": 2000,
+        "mean": 5.384,
+        "min": 4,
+        "p10": 5,
+        "median": 5,
+        "p90": 6,
+        "p95": 6,
+        "max": 8
+      },
+      "battleTurns": {
+        "count": 2000,
+        "mean": 22.505,
+        "min": 21,
+        "p10": 22,
+        "median": 23,
+        "p90": 23,
+        "p95": 24,
+        "max": 25
+      },
+      "reasonCounts": {
+        "full": 2000
+      },
+      "mainFailureReasons": {},
+      "postVictoryEndReasons": {
+        "full": 2000
+      },
+      "errors": [],
+      "chanceSpent": {
+        "health": {
+          "count": 2000,
+          "mean": 0,
+          "min": 0,
+          "p10": 0,
+          "median": 0,
+          "p90": 0,
+          "p95": 0,
+          "max": 0
+        },
+        "command": {
+          "count": 2000,
+          "mean": 4,
+          "min": 4,
+          "p10": 4,
+          "median": 4,
+          "p90": 4,
+          "p95": 4,
+          "max": 4
+        },
+        "strategy": {
+          "count": 2000,
+          "mean": 3,
+          "min": 3,
+          "p10": 3,
+          "median": 3,
+          "p90": 3,
+          "p95": 3,
+          "max": 3
+        },
+        "governance": {
+          "count": 2000,
+          "mean": 3,
+          "min": 3,
+          "p10": 3,
+          "median": 3,
+          "p90": 3,
+          "p95": 3,
+          "max": 3
+        }
+      },
+      "captureCounts": {
+        "chencang": 2000,
+        "changan": 2000,
+        "tongguan": 2000,
+        "luoyang": 2000,
+        "wudu": 2000,
+        "longyou": 2000,
+        "jiangling": 2000,
+        "wuchang": 2000,
+        "jianye": 2000
+      },
+      "examples": {
+        "mainWin": 10010001,
+        "fullWin": 10010001
+      }
+    }
+  },
+  "hashes": {
+    "engine.js": "29e65d7bdc0249bf71807ebbdce5e8bfc0918f30b6f3affc75d6016ac28c046a",
+    "config.js": "8920bd127d4dd5b5e4327508771eece3c3b6d50e54e3ffe90a43149f11cf10b0",
+    "policy.cjs": "78c55cedc99389b63e865b7d3618650369f5fe1060d5c1a35e622a62fc33b31c",
+    "simulate.cjs": "db16b227e8e7d223ceb41db091e5c862e1fbac0442b72d0fd4924f39f4a700e1"
+  },
+  "sourceChangedDuringRun": []
+}

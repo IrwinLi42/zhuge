@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "difficulties": {
+    "easy": {
+      "label": "简单",
+      "enemyMultiplier": 0.94,
+      "supplyCostMultiplier": 1,
+      "battleLossMultiplier": 1
+    },
+    "normal": {
+      "label": "普通",
+      "enemyMultiplier": 1,
+      "supplyCostMultiplier": 3.19,
+      "battleLossMultiplier": 1
+    },
+    "hard": {
+      "label": "困难",
+      "enemyMultiplier": 1.2,
+      "supplyCostMultiplier": 3.48,
+      "battleLossMultiplier": 1
+    }
+  },
+  "checks": [
+    "dynamic difficulty multipliers",
+    "region efficiency",
+    "territory efficiency",
+    "ability limits help",
+    "visible warnings without disabling actions"
+  ],
+  "errors": []
+}

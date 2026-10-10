@@ -1,0 +1,561 @@
+{
+  "schema": "beifa-diplomacy-supplement-v1",
+  "policyVersion": "1.0.0",
+  "split": "new-holdout",
+  "seedRange": {
+    "first": 10020001,
+    "last": 10022000,
+    "count": 2000
+  },
+  "definitions": {
+    "stable-alliance": "包装固定 novice：外交事件选履行约定；仍处盟约、关系低于80，且健康至少20、军粮至少350、兵力至少250、国库至少240时遣使（保留一次募兵的国库余量）。一次吴援助可用即领取军粮。危急休整、机缘、入侵准备与战斗仍优先依照 novice。主胜后继续同一全图路线；主动攻吴后不反复修盟或送礼。",
+    "low-relation": "包装固定 novice：外交事件优先本军；不遣使、不取援助、不议和、不修盟。其他行动、战术、机缘和主胜后全图路线全部照 novice。不改初始关系70，不额外拖延内政以强制造成关系下降。"
+  },
+  "disclaimer": "固定公开信息代理的独立补充，不是实际玩家样本。与前36,000局种子不重叠；各难度/策略共享本次种子段作成对比较。主胜后继续全图，吴入侵应区分主胜前与主动攻吴后的继续征服。外交事件只是该内政回合的一个选项，不另加外交回合；外交回合专指遣使、援助、议和、修盟。",
+  "hashes": {
+    "engine.js": "29e65d7bdc0249bf71807ebbdce5e8bfc0918f30b6f3affc75d6016ac28c046a",
+    "config.js": "8920bd127d4dd5b5e4327508771eece3c3b6d50e54e3ffe90a43149f11cf10b0",
+    "policy.cjs": "78c55cedc99389b63e865b7d3618650369f5fe1060d5c1a35e622a62fc33b31c",
+    "simulate.cjs": "db16b227e8e7d223ceb41db091e5c862e1fbac0442b72d0fd4924f39f4a700e1",
+    "外交策略模拟.cjs": "ff5cc5d6a831d15d30bed8675cbe5d74dce240f4a81101703ac5920d35141c51"
+  },
+  "cells": {
+    "easy/stable-alliance": {
+      "runs": 2000,
+      "mainVictory": {
+        "wins": 2000,
+        "n": 2000,
+        "rate": 1,
+        "lower": 0.9980829527187469,
+        "upper": 0.9999999999999998,
+        "confidence": 0.95,
+        "method": "Wilson"
+      },
+      "fullVictory": {
+        "wins": 2000,
+        "n": 2000,
+        "rate": 1,
+        "lower": 0.9980829527187469,
+        "upper": 0.9999999999999998,
+        "confidence": 0.95,
+        "method": "Wilson"
+      },
+      "mainVictoryTurns": {
+        "count": 2000,
+        "mean": 20.3,
+        "min": 17,
+        "p10": 19,
+        "median": 20,
+        "p90": 22,
+        "p95": 23,
+        "max": 23
+      },
+      "fullVictoryTurns": {
+        "count": 2000,
+        "mean": 39.1795,
+        "min": 35,
+        "p10": 38,
+        "median": 39,
+        "p90": 41,
+        "p95": 42,
+        "max": 44
+      },
+      "turns": {
+        "count": 2000,
+        "mean": 39.1795,
+        "min": 35,
+        "p10": 38,
+        "median": 39,
+        "p90": 41,
+        "p95": 42,
+        "max": 44
+      },
+      "domesticTurns": {
+        "count": 2000,
+        "mean": 7.5555,
+        "min": 6,
+        "p10": 7,
+        "median": 7,
+        "p90": 9,
+        "p95": 9,
+        "max": 10
+      },
+      "wuInvasions": {
+        "count": 2000,
+        "mean": 0.1945,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 1,
+        "p95": 1,
+        "max": 1
+      },
+      "preMainWuInvasions": {
+        "count": 2000,
+        "mean": 0,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "diplomacyTurns": {
+        "count": 2000,
+        "mean": 2,
+        "min": 2,
+        "p10": 2,
+        "median": 2,
+        "p90": 2,
+        "p95": 2,
+        "max": 2
+      },
+      "preMainDiplomacyTurns": {
+        "count": 2000,
+        "mean": 2,
+        "min": 2,
+        "p10": 2,
+        "median": 2,
+        "p90": 2,
+        "p95": 2,
+        "max": 2
+      },
+      "diplomacyEvents": {
+        "count": 2000,
+        "mean": 1.1475,
+        "min": 0,
+        "p10": 0,
+        "median": 1,
+        "p90": 2,
+        "p95": 3,
+        "max": 5
+      },
+      "preMainDiplomacyEvents": {
+        "count": 2000,
+        "mean": 0.659,
+        "min": 0,
+        "p10": 0,
+        "median": 1,
+        "p90": 2,
+        "p95": 2,
+        "max": 5
+      },
+      "preMainDomesticTurns": {
+        "count": 2000,
+        "mean": 4.3335,
+        "min": 3,
+        "p10": 4,
+        "median": 4,
+        "p90": 5,
+        "p95": 6,
+        "max": 6
+      },
+      "preMainMinRelation": {
+        "count": 2000,
+        "mean": 70,
+        "min": 70,
+        "p10": 70,
+        "median": 70,
+        "p90": 70,
+        "p95": 70,
+        "max": 70
+      },
+      "envoyTurns": {
+        "count": 2000,
+        "mean": 1,
+        "min": 1,
+        "p10": 1,
+        "median": 1,
+        "p90": 1,
+        "p95": 1,
+        "max": 1
+      },
+      "aidTurns": {
+        "count": 2000,
+        "mean": 1,
+        "min": 1,
+        "p10": 1,
+        "median": 1,
+        "p90": 1,
+        "p95": 1,
+        "max": 1
+      },
+      "peaceTurns": {
+        "count": 2000,
+        "mean": 0,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "allianceTurns": {
+        "count": 2000,
+        "mean": 0,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "preMainDiplomacyEventExposure": {
+        "wins": 1034,
+        "n": 2000,
+        "rate": 0.517,
+        "lower": 0.49508799393928304,
+        "upper": 0.5388468264531544,
+        "confidence": 0.95,
+        "method": "Wilson"
+      },
+      "preMainLowRelationExposure": {
+        "wins": 0,
+        "n": 2000,
+        "rate": 0,
+        "lower": 1.0842021724855044e-19,
+        "upper": 0.001917047281252934,
+        "confidence": 0.95,
+        "method": "Wilson"
+      },
+      "preMainWuInvasionExposure": {
+        "wins": 0,
+        "n": 2000,
+        "rate": 0,
+        "lower": 1.0842021724855044e-19,
+        "upper": 0.001917047281252934,
+        "confidence": 0.95,
+        "method": "Wilson"
+      },
+      "wuInvasionExposure": {
+        "wins": 389,
+        "n": 2000,
+        "rate": 0.1945,
+        "lower": 0.1777453490221474,
+        "upper": 0.21242596686669812,
+        "confidence": 0.95,
+        "method": "Wilson"
+      },
+      "mainWinners": {
+        "preMainDiplomacyEvents": {
+          "count": 2000,
+          "mean": 0.659,
+          "min": 0,
+          "p10": 0,
+          "median": 1,
+          "p90": 2,
+          "p95": 2,
+          "max": 5
+        },
+        "preMainDiplomacyTurns": {
+          "count": 2000,
+          "mean": 2,
+          "min": 2,
+          "p10": 2,
+          "median": 2,
+          "p90": 2,
+          "p95": 2,
+          "max": 2
+        },
+        "preMainWuInvasions": {
+          "count": 2000,
+          "mean": 0,
+          "min": 0,
+          "p10": 0,
+          "median": 0,
+          "p90": 0,
+          "p95": 0,
+          "max": 0
+        },
+        "relationAtMain": {
+          "count": 2000,
+          "mean": 94.391,
+          "min": 90,
+          "p10": 90,
+          "median": 98,
+          "p90": 100,
+          "p95": 100,
+          "max": 100
+        }
+      },
+      "mainFailureReasons": {},
+      "postVictoryEndReasons": {
+        "full": 2000
+      },
+      "errors": [],
+      "examples": {
+        "mainWin": 10020001,
+        "fullWin": 10020001
+      }
+    },
+    "easy/low-relation": {
+      "runs": 2000,
+      "mainVictory": {
+        "wins": 2000,
+        "n": 2000,
+        "rate": 1,
+        "lower": 0.9980829527187469,
+        "upper": 0.9999999999999998,
+        "confidence": 0.95,
+        "method": "Wilson"
+      },
+      "fullVictory": {
+        "wins": 2000,
+        "n": 2000,
+        "rate": 1,
+        "lower": 0.9980829527187469,
+        "upper": 0.9999999999999998,
+        "confidence": 0.95,
+        "method": "Wilson"
+      },
+      "mainVictoryTurns": {
+        "count": 2000,
+        "mean": 17.894,
+        "min": 17,
+        "p10": 17,
+        "median": 18,
+        "p90": 18,
+        "p95": 19,
+        "max": 21
+      },
+      "fullVictoryTurns": {
+        "count": 2000,
+        "mean": 36.8885,
+        "min": 34,
+        "p10": 36,
+        "median": 37,
+        "p90": 39,
+        "p95": 39,
+        "max": 42
+      },
+      "turns": {
+        "count": 2000,
+        "mean": 36.8885,
+        "min": 34,
+        "p10": 36,
+        "median": 37,
+        "p90": 39,
+        "p95": 39,
+        "max": 42
+      },
+      "domesticTurns": {
+        "count": 2000,
+        "mean": 5.375,
+        "min": 4,
+        "p10": 5,
+        "median": 5,
+        "p90": 6,
+        "p95": 6,
+        "max": 8
+      },
+      "wuInvasions": {
+        "count": 2000,
+        "mean": 0.1975,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 1,
+        "p95": 1,
+        "max": 1
+      },
+      "preMainWuInvasions": {
+        "count": 2000,
+        "mean": 0,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "diplomacyTurns": {
+        "count": 2000,
+        "mean": 0,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "preMainDiplomacyTurns": {
+        "count": 2000,
+        "mean": 0,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "diplomacyEvents": {
+        "count": 2000,
+        "mean": 0.8045,
+        "min": 0,
+        "p10": 0,
+        "median": 1,
+        "p90": 2,
+        "p95": 2,
+        "max": 5
+      },
+      "preMainDiplomacyEvents": {
+        "count": 2000,
+        "mean": 0.3185,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 1,
+        "p95": 1,
+        "max": 2
+      },
+      "preMainDomesticTurns": {
+        "count": 2000,
+        "mean": 2.085,
+        "min": 2,
+        "p10": 2,
+        "median": 2,
+        "p90": 2,
+        "p95": 3,
+        "max": 4
+      },
+      "preMainMinRelation": {
+        "count": 2000,
+        "mean": 65.2225,
+        "min": 40,
+        "p10": 55,
+        "median": 70,
+        "p90": 70,
+        "p95": 70,
+        "max": 70
+      },
+      "envoyTurns": {
+        "count": 2000,
+        "mean": 0,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "aidTurns": {
+        "count": 2000,
+        "mean": 0,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "peaceTurns": {
+        "count": 2000,
+        "mean": 0,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "allianceTurns": {
+        "count": 2000,
+        "mean": 0,
+        "min": 0,
+        "p10": 0,
+        "median": 0,
+        "p90": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "preMainDiplomacyEventExposure": {
+        "wins": 587,
+        "n": 2000,
+        "rate": 0.2935,
+        "lower": 0.2739541721375461,
+        "upper": 0.31383756838961124,
+        "confidence": 0.95,
+        "method": "Wilson"
+      },
+      "preMainLowRelationExposure": {
+        "wins": 587,
+        "n": 2000,
+        "rate": 0.2935,
+        "lower": 0.2739541721375461,
+        "upper": 0.31383756838961124,
+        "confidence": 0.95,
+        "method": "Wilson"
+      },
+      "preMainWuInvasionExposure": {
+        "wins": 0,
+        "n": 2000,
+        "rate": 0,
+        "lower": 1.0842021724855044e-19,
+        "upper": 0.001917047281252934,
+        "confidence": 0.95,
+        "method": "Wilson"
+      },
+      "wuInvasionExposure": {
+        "wins": 395,
+        "n": 2000,
+        "rate": 0.1975,
+        "lower": 0.18063925588488788,
+        "upper": 0.21552055772027012,
+        "confidence": 0.95,
+        "method": "Wilson"
+      },
+      "mainWinners": {
+        "preMainDiplomacyEvents": {
+          "count": 2000,
+          "mean": 0.3185,
+          "min": 0,
+          "p10": 0,
+          "median": 0,
+          "p90": 1,
+          "p95": 1,
+          "max": 2
+        },
+        "preMainDiplomacyTurns": {
+          "count": 2000,
+          "mean": 0,
+          "min": 0,
+          "p10": 0,
+          "median": 0,
+          "p90": 0,
+          "p95": 0,
+          "max": 0
+        },
+        "preMainWuInvasions": {
+          "count": 2000,
+          "mean": 0,
+          "min": 0,
+          "p10": 0,
+          "median": 0,
+          "p90": 0,
+          "p95": 0,
+          "max": 0
+        },
+        "relationAtMain": {
+          "count": 2000,
+          "mean": 65.2225,
+          "min": 40,
+          "p10": 55,
+          "median": 70,
+          "p90": 70,
+          "p95": 70,
+          "max": 70
+        }
+      },
+      "mainFailureReasons": {},
+      "postVictoryEndReasons": {
+        "full": 2000
+      },
+      "errors": [],
+      "examples": {
+        "mainWin": 10020001,
+        "fullWin": 10020001
+      }
+    }
+  },
+  "sourceChangedDuringRun": []
+}

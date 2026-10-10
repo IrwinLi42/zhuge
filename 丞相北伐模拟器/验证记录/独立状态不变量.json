@@ -1,0 +1,13 @@
+{
+  "kind": "independent-public-api-invariants",
+  "runs": 150,
+  "turns": 2174,
+  "saveRoundtrips": 4498,
+  "actions": 2174,
+  "fixtures": [
+    "pending-event",
+    "battle",
+    "warning",
+    "defense"
+  ]
+}

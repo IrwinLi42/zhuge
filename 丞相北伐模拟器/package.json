@@ -1,0 +1,11 @@
+{
+  "name": "beifa-system-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "description": "丞相北伐模拟器：地图、寿命、战役、外交与数值系统试玩",
+  "scripts": {
+    "start": "node server.cjs",
+    "test": "node --test engine.test.cjs",
+    "simulate": "node simulate.cjs"
+  }
+}

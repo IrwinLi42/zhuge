@@ -1,0 +1,99 @@
+{
+  "version": "0.1.0",
+  "generatedAt": "2026-10-09T10:01:05.317Z",
+  "localUrl": "http://127.0.0.1:8766/",
+  "originalHanmen": {
+    "filesChecked": 34,
+    "changedFiles": 0
+  },
+  "tests": {
+    "rulesPassed": 37,
+    "browserGroups": 9,
+    "browserErrors": 0,
+    "mobileSizes": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 768,
+        "height": 1024
+      }
+    ],
+    "invariantRuns": 150,
+    "invariantTurns": 2174,
+    "saveRoundtrips": 4498
+  },
+  "simulation": {
+    "runs": 36000,
+    "cells": 18,
+    "runsPerCell": 2000,
+    "seedRange": {
+      "first": 10010001,
+      "last": 10012000,
+      "count": 2000
+    },
+    "targets": {
+      "easy/casual": {
+        "wins": 1389,
+        "n": 2000,
+        "rate": 0.6945,
+        "lower": 0.673955905505604,
+        "upper": 0.7142983631019885,
+        "confidence": 0.95,
+        "method": "Wilson"
+      },
+      "normal/novice": {
+        "wins": 1042,
+        "n": 2000,
+        "rate": 0.521,
+        "lower": 0.499086973019876,
+        "upper": 0.5428325109943114,
+        "confidence": 0.95,
+        "method": "Wilson"
+      },
+      "hard/novice": {
+        "wins": 376,
+        "n": 2000,
+        "rate": 0.188,
+        "lower": 0.17148068565539723,
+        "upper": 0.20571555184810456,
+        "confidence": 0.95,
+        "method": "Wilson"
+      }
+    },
+    "runtimeErrors": 0,
+    "interpretation": "固定策略代理，不是实际玩家胜率；分钟数未做真人测量"
+  },
+  "hashes": {
+    "app.js": "0e0a45b1963c8377425ef3c0dd3e0e9abd903c7a77de6432e31d6352518e94d2",
+    "config.js": "8920bd127d4dd5b5e4327508771eece3c3b6d50e54e3ffe90a43149f11cf10b0",
+    "engine.js": "29e65d7bdc0249bf71807ebbdce5e8bfc0918f30b6f3affc75d6016ac28c046a",
+    "engine.test.cjs": "408afc18e4abbaac7420940f56c754fd053a8703b00eba95ece31883b226ea2b",
+    "index.html": "ea8a3a53a310cee7365482ea8f5ac88f997e641341142247c5731fc24a3a4ca2",
+    "package.json": "0fdabeeb4be517a277f17ea6fb31c7d44479100814338fed705dd403b2aee55e",
+    "policy.cjs": "78c55cedc99389b63e865b7d3618650369f5fe1060d5c1a35e622a62fc33b31c",
+    "server.cjs": "b99c6efefc9367cb84759f686164da50d70fa53a1cc2ea2268fdc455b6f3bd24",
+    "simulate.cjs": "db16b227e8e7d223ceb41db091e5c862e1fbac0442b72d0fd4924f39f4a700e1",
+    "styles.css": "061daf81e785ce4e71fc4d78ec36be51fae52587d89784152c04c2b5c5c22116",
+    "启动试玩.ps1": "16b192564218c10a890c5a53b3ee0b2540d2fa17cbd34fb1783a6303e4d6eff5",
+    "外交策略模拟.cjs": "ff5cc5d6a831d15d30bed8675cbe5d74dce240f4a81101703ac5920d35141c51",
+    "外交策略补充验证.md": "3c65727b8af826ecf2b33e21ce844d0d908cab57afce1a5ad4255c1a40ddd229",
+    "机制与平衡验证.md": "bc04e54054467c641b5fd7a12e94e51fdeceef753246a6b75077ef868f4b3138",
+    "系统与剧本接口.md": "3465aa3b064ab1a2727a396c0882e0903fb18e0cae0aa68e6206363b10d4886b",
+    "试玩说明.md": "7e3252a5a9338c09c88266059f7c28d7378980a4a0a45a233960dc0daaf161bf"
+  },
+  "diplomacySupplement": {
+    "runs": 12000,
+    "cells": 6,
+    "runsPerCell": 2000,
+    "seedRange": {
+      "first": 10020001,
+      "last": 10022000,
+      "count": 2000
+    },
+    "runtimeErrors": 0,
+    "interpretation": "固定公开信息代理的独立补充，不是实际玩家样本。与前36,000局种子不重叠；各难度/策略共享本次种子段作成对比较。主胜后继续全图，吴入侵应区分主胜前与主动攻吴后的继续征服。外交事件只是该内政回合的一个选项，不另加外交回合；外交回合专指遣使、援助、议和、修盟。"
+  },
+  "totalSimulationRuns": 48000
+}
